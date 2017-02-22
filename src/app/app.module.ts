@@ -17,6 +17,7 @@ import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {StoreLogMonitorModule, useLogMonitor} from '@ngrx/store-log-monitor';
 import {eventsreducer} from './shared/events.reducer.store';
+import {EventsService} from './services/events.service';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import {eventsreducer} from './shared/events.reducer.store';
     StoreLogMonitorModule
 
   ],
-  providers: [],
+  providers: [EventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
