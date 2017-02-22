@@ -13,6 +13,12 @@ import { EventsListComponent } from './events-list/events-list.component';
 import { EventThumbnailComponent } from './events-list/events-thumbnail.component';
 import { CreateEventComponent } from './create-event/create-event.component'
 
+import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {StoreLogMonitorModule, useLogMonitor} from '@ngrx/store-log-monitor';
+import {eventsreducer} from './shared/events.reducer.store';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +32,16 @@ import { CreateEventComponent } from './create-event/create-event.component'
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes) 
+    RouterModule.forRoot(appRoutes) ,
+    StoreModule.provideStore({eventsreducer}),
+    StoreDevtoolsModule.instrumentStore({
+      monitor: useLogMonitor({
+        visible: false,
+        position: 'right'
+      })
+    }),
+    StoreLogMonitorModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
