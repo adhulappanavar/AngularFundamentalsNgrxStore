@@ -35,12 +35,6 @@ import {EventsService} from './services/events.service';
     HttpModule,
     RouterModule.forRoot(appRoutes) ,
     StoreModule.provideStore({eventsreducer}),
-    StoreDevtoolsModule.instrumentStore({
-      monitor: useLogMonitor({
-        visible: false,
-        position: 'right'
-      })
-    }),
     StoreLogMonitorModule
 
   ],
