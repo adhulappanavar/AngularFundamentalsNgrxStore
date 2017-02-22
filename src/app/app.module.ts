@@ -8,13 +8,19 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { Error404Component } from './errors/404.component'
-import { appRoutes } from './routes'
+import { appRoutes } from './routes';
+import { EventsListComponent } from './events-list/events-list.component';
+import { EventThumbnailComponent } from './events-list/events-thumbnail.component';
+import { CreateEventComponent } from './create-event/create-event.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    Error404Component
+    Error404Component,
+    EventsListComponent,
+    EventThumbnailComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,
