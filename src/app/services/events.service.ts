@@ -3,11 +3,12 @@ import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 
 import {AppStore} from '../shared/index';
 import {IEvent} from '../shared/index';
 
-const BASE_URL = 'http://localhost:3000/events/';
+const BASE_URL = 'http://localhost:3033/events/';
 const HEADER = { headers: new Headers({ 'Content-Type': 'application/json' }) };
 
 @Injectable()
@@ -20,8 +21,11 @@ export class EventsService {
 
   loadEvents() {
     this.http.get(BASE_URL)
+      .do( res => console.log('HTTP response:', res))
       .map(res => res.json())
+      .do(console.log)
       .map(payload => ({ type: 'ADD_EVENTS', payload }))
+      .do(console.log)
       .subscribe(action => this.store.dispatch(action));
   }
 

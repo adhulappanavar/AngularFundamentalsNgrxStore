@@ -29,5 +29,36 @@
           "abstract": "We all know that our dev teams work hard, but with  the right management they can be even more productive, without overworking them. In this session I'll show you how to get the best results from the talent you already have on staff.",
           "voters": ["johnpapa", "bradgreen", "igorminar", "martinfowler"]
         }]
+    },
+    {
+        "id": 1,
+        "name": "Angular Connect - aaaaaa",
+        "date": "9/26/2036",
+        "time": "12:00 am",
+        "price": 1111599.99,
+        "imageUrl": "/app/assets/images/angularconnect-shield.png",
+        "location": {
+            "address": "1057 DT",
+            "city": "London aaa",
+            "country": "England"
+        },
+        "sessions": [{
+            "id": 1,
+            "name": "Using Angular 4 Pipes",
+            "presenter": "Peter Bacon Darwin",
+            "duration": 1,
+            "level": "Intermediate",
+            "abstract": "Learn all about the new pipes in Angular 4, both how to write them, and how to get the new AI CLI to write them for you. Given by the famous PBD, president of Angular University (formerly Oxford University)",
+            "voters": ["bradgreen", "igorminar", "martinfowler"]
+        },
+        {
+          "id": 2,
+          "name": "Getting the most out of your dev team",
+          "presenter": "Jeff Cross",
+          "duration": 1,
+          "level": "Intermediate",
+          "abstract": "We all know that our dev teams work hard, but with  the right management they can be even more productive, without overworking them. In this session I'll show you how to get the best results from the talent you already have on staff.",
+          "voters": ["johnpapa", "bradgreen", "igorminar", "martinfowler"]
+        }]
     }]
 }

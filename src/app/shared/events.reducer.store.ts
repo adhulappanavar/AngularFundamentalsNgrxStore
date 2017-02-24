@@ -1,6 +1,7 @@
 export const eventsreducer = (state: any = [], {type, payload}) => {
   switch (type) {
     case 'ADD_EVENTS':
+        console.log("Events Reducer - ADD EVENTS" + payload);
       return payload;
     case 'CREATE_EVENT':
       return [...state, payload];

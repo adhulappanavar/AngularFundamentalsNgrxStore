@@ -1,15 +1,48 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs/Observable";
+import {Store} from '@ngrx/store';
+import {EventsService} from '../services/events.service';
+
+import {AppStore} from '../shared/appstore.model';
+
 
 import {IEvent} from '../shared/index';
 
 @Component({
   selector: 'app-events-list',
   templateUrl: './events-list.component.html',
-  styleUrls: ['./events-list.component.css']
+  styleUrls: ['./events-list.component.css'],
+  providers: [EventsService]
 })
 export class EventsListComponent implements OnInit {
 
 
+
+  events: Observable<IEvent[]>;
+  selectedEvent: Observable<IEvent>;
+
+  eventarray : IEvent[];
+
+  constructor(private eventsService: EventsService,
+              private store: Store<AppStore>) { 
+            //this.events = eventsService.events;
+            console.log("Event List Component [] - Constructor this.event=" + this.events);
+            this.events = store.select('eventsreducer');
+            this.events.subscribe(v => console.log("Events" + v));
+            
+                console.log("Event List Component - Calling eventsService.loadEvents()");
+              eventsService.loadEvents();
+            this.events = store.select('eventsreducer');
+              console.log("Event List Component - Post Load Event this.events=" + this.events);
+        }
+
+  ngOnInit() {
+  }
+
+}
+
+
+/*
 events:IEvent[] = [
     {
       id: 1,
@@ -317,10 +350,4 @@ events:IEvent[] = [
       ]
     }
   ]
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+*/
